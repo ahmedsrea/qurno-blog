@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crete+Round&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    scroll-behavior: smooth;
+}
+body {
+    background-color: #FFF6EF;
+}
+.dropdown:hover .dropdown-menu {
+    display: block;
+    transition: all 0.3s ease-out;
+}
+
+.nav_links {
+    position: fixed;
+    width: 100%;
+    background: white;
+    top: 0;
+    left: 0;    
+    min-height: 350px;
+    transform: translateY(-100%);
+    transition: transform 0.3s;
+    z-index: 10;
+}
+
+.nav__open .nav_links {
+    transform: translateY(0);
+}
+.nav__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.3);
+    /* backdrop-filter: blur(1px); */
+    visibility: hidden;
+    opacity: 0;
+    z-index: 5;
+    transition: opacity 0.3s;
+}
+.nav__open .nav__overlay {
+    visibility: visible;
+    opacity: 1;
+  }
+
+.text-shaa {
+    text-shadow: 0 -6px 0 #212121, 0 -6px 0 #212121, 0 6px 0 #212121, 0 6px 0 #212121, -6px 0 0 #212121, 6px 0 0 #212121, -6px 0 0 #212121, 6px 0 0 #212121, -6px -6px 0 #212121, 6px -6px 0 #212121, -6px 6px 0 #212121, 6px 6px 0 #212121, -6px 18px 0 #212121, 0 18px 0 #212121, 6px 18px 0 #212121, 0 19px 1px rgb(0 0 0 / 10%), 0 0 6px rgb(0 0 0 / 10%), 0 6px 3px rgb(0 0 0 / 30%), 0 12px 6px rgb(0 0 0 / 20%), 0 18px 18px rgb(0 0 0 / 25%), 0 24px 24px rgb(0 0 0 / 20%), 0 36px 36px rgb(0 0 0 / 15%);
+}
+footer {
+    background: linear-gradient(#fff6ef,#fff 55%);
+}
+.footerdark {
+    background: linear-gradient(180deg,#02111a,#020b12 55%)    
+}
+.paginationBttns {
+    margin-bottom: 40px;
+    min-width: 10%;
+    padding: 23px 3px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    border: 1px solid white;
+}
+.paginationBttnsDark {
+    border: 1px solid #ddd;
+}
+.paginationBttns a {
+    padding: 18px 18px;
+    margin: 5px;
+    font-size: medium;
+    font-weight: 500;
+    font-family: "Work Sans";
+    border-radius: 4px;
+    color: #152035;
+    background-color: white;
+    transition: 0.3s ease-in-out;
+}
+.paginationBttns a:hover {
+    color: white;
+    background-color: #f08E80;
+}
+.paginationAction a{
+    color: white;
+    background-color: #f08E80;
+}
+
+/* Start Mobile Menu  */
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    backdrop-filter: blur(16px);
+    background-color: rgba(255,246,239,.9);
+    transition: all 300ms ease-in-out;
+    font-family: Work Sans;
+    /* box-shadow: 0 0 50px -30px rgb(240 142 128 / 50%); */
+}
+.menu li a {
+    display: flex;
+    justify-content: center;
+    padding: 10px 70px;
+    transition: all 100ms ease-in;
+}
+.menu li a:hover {
+    background-color: rgba(240,142,128,.1);
+    padding: 10px 70px;
+} 
+.menu li.subitem a {
+    padding: 7px 20px;
+}
+.item {
+    text-align: center;
+    display: none;
+}
+.active .item {
+    display: block;
+}
+.submenu {
+    /* display: none; */
+    background-color: #f08e800d;
+}
+.submenu-active .submenu {
+    display: block;
+}
+.subitem a {
+    padding: 10px 70px;
+}
+.submenu-active {
+    background-color: #111;
+    border-radius: 3px;
+}
+@media (min-width: 700px) {
+    .menu {
+        justify-content: center;
+    }
+}
+/* End Mobile Menu  */
+/* Start Sticy Header */
+.scroll-down header {
+    transform: translate3d(0, -100%, 0);
+}
+.scroll-up header {
+    box-shadow: 0 0 50px -30px rgb(240 142 128 / 50%);
+    padding: 20px 0;
+    backdrop-filter: blur(16px);
+    background-color: rgba(255,246,239,.9);
+}
